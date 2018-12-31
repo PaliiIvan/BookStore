@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Recipe } from 'src/app/models/reciple.model';
 
 @Component({
@@ -7,15 +7,28 @@ import { Recipe } from 'src/app/models/reciple.model';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit {
+  @Output() chosedRecipleEvent = new EventEmitter<Recipe>();
   recipleas: Recipe[] = [
-    new Recipe('Forgotten  Realams', 'Fantasy',
-     'https://vignette.wikia.nocookie.net' +
-     '/rpg/images/e/e1/Forgotten_Realms_Campaign' +
-     '_Set.jpg/revision/latest?cb=20181029100324&path-prefix=ru')
+    new Recipe('Meat', 'Some Meat Description',
+    'https://res.cloudinary' +
+    '.com/hellofresh/image/upload/' +
+    'f_auto,fl_lossy,h_436,q_auto/v1/hellofresh_s3/' +
+    'image/enchiladas-aux-legumes-1a1102aa.jpg'),
+    new Recipe(
+      'Salad',
+      'Salad Description',
+      'https://assets.bonappetit.com/' +
+      'photos/596a896d7102712b68401ab0/16:9/' +
+      'w_1200,c_limit/tomato-salad-with-' +
+      'feta-and-pistachios.jpg'
+    )
   ];
   constructor() { }
 
   ngOnInit() {
   }
 
+  onCheckedRecipleItem(recipe: Recipe) {
+    this.chosedRecipleEvent.emit(recipe);
+  }
 }

@@ -5,31 +5,33 @@
 </div>
 <div class='row'>
   <div class='col-xs-12'>
-   <h1> Reciple Name</h1>
+   <h1>{{recipe.name}}</h1>
    <hr>
   </div>
 </div>
 <div class='row'>
   <div class='col-xs-12'>
-    <div class='btn-group'>
-      <button type='button' class='btn btn-primary dropdown-toggle'>
-        Manage Recipe <span class='caret'></span>
-      </button>
-      <ul class='dropdown-menu'>
-        <li> <a href='#'>Add to Shopping List</a></li>
-        <li> <a href='#'>Edit recipe</a></li>
-        <li> <a href='#'>Delete recipe</a></li>
-      </ul>
-    </div>
   </div>
 </div>
 <div class='row'>
   <div class='col-xs-12'>
-    Description
+    {{recipe.description}}
   </div>
 </div>
+<hr>
 <div class='row'>
     <div class='col-xs-12'>
-      Ingredients
+      <img src={{recipe.imagePath}} alt="" class='img-responsive' style='max-height: 250px;'>
     </div>
+  </div>
+  <hr>
+  <div class='btn-group'>
+    <button type='button' class='btn btn-primary dropdown-toggle'>
+      Manage Recipe <span class='caret'></span>
+    </button>
+    <ul class='dropdown-menu'>
+      <li> <a href='#'>Add to Shopping List</a></li>
+      <li> <a href='#'>Edit recipe</a></li>
+      <li> <a href='#'>Delete recipe</a></li>
+    </ul>
   </div>
