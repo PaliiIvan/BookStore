@@ -1,0 +1,14 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h4>Active Users</h4>
+    </div>
+  </div>
+  <div class='col-xs-6'>
+      <ul class='list-group'>
+        <li class='list-group-item' *ngFor='let user of users let i = index'>
+          {{user.name}} | <a class='cursor-pointer' (click)='toInActive(user.id)'>Set To In Active</a>
+        </li>
+      </ul>
+  </div>
+</div>

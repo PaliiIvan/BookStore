@@ -1,0 +1,7 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.border {
+    border-bottom: 1px solid rgb(80, 156, 255);
+}
