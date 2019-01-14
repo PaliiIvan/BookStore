@@ -12,7 +12,7 @@ export class AppComponent {
     this.flag = flag;
   }
 
-  public get IsReciple(): boolean {
+  public get IsRecipe(): boolean {
     return this.flag === DisplayRecipleStoreFlag.Reciple;
   }
 
