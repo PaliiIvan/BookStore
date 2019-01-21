@@ -1,19 +1,13 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { DisplayRecipleStoreFlag } from '../models/reciple.display.flag';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-@Output() displayEventEmiter = new EventEmitter<DisplayRecipleStoreFlag>();
+  @Output() featureSelected = new EventEmitter<string>();
 
-    onRecipleShow() {
-        this.displayEventEmiter.emit(DisplayRecipleStoreFlag.Reciple);
-    }
-
-    onShopingListShow() {
-        this.displayEventEmiter.emit(DisplayRecipleStoreFlag.ShopingList);
-    }
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
+  }
 }
