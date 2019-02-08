@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,19 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auhService: AuthService) { }
 
   ngOnInit() {
   }
-  onLoadServers() {
-    this.router.navigate(['/servers']);
+  onLoadServers(id: number) {
+    this.router.navigate(['/servers', 1, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'sds'});
+  }
+
+  onLogin() {
+    this.auhService.logIn();
+  }
+
+  onLogout() {
+    this.auhService.logOut();
   }
 }
