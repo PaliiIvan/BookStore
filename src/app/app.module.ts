@@ -14,6 +14,8 @@ import { RoutingModule } from './routing/routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 
 
@@ -26,14 +28,15 @@ import { AuthGuardService } from './auth-guard.service';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RoutingModule
   ],
-  providers: [ServersService, AuthService, AuthGuardService],
+  providers: [ServersService, AuthService, AuthGuardService, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
