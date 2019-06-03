@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username">Username</label>
           <input
@@ -16,7 +16,7 @@
             type="text"
             id="email"
             class="form-control"
-            formControlNaem="email">
+            formControlName="email">
         </div>
         <div class="radio" *ngFor="let gender of genders">
           <label>
@@ -26,8 +26,15 @@
               formControlName="gender">{{ gender }}
           </label>
         </div>
+        <div formArrayName = "hobbies">
+          <h4>You Hobbies</h4>
+          <button class="btn btn-default" type="button" (click)='onAddHobby()'>Add Hobby</button>
+          <div class="form-group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
-  </div>
+  </div>asd
 </div>
