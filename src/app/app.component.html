@@ -1,1 +1,27 @@
-<h1>Hi</h1>
+<div class='container' style='width: 400px'>
+    <div >
+        <div class='form-group'>
+            <form [formGroup] = "projectDataForm" (ngSubmit)="onSubmit()">
+                <label class='col-form-label'>Project Name</label>
+                <input 
+                 class='form-control' 
+                 type='text'
+                 formControlName="projectName">
+                <br>
+                <label>Mail</label>
+                <input
+                 type='text'
+                 class='form-control'
+                 formControlName='mail'>
+                <br>
+                <label>Project Status</label><br>
+                <select class='form-control-sm' formControlName='projectStatus'>
+                    <option>Stable</option>
+                    <option>Critical</option>
+                    <option>Finished</option>
+                </select><br><br>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
