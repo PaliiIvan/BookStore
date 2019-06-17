@@ -12,7 +12,7 @@ import { RecipeService } from '../recipe.service';
 export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   id: number;
-
+  readonly idQuery = 'id';
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -22,7 +22,7 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
+          this.id = +params[this.idQuery];
           this.recipe = this.recipeService.getRecipe(this.id);
         }
       );
