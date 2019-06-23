@@ -60,4 +60,7 @@ export class AuthenticationComponent {
     }
   }
 
+  onHandleErrorClose() {
+    this.error = '';
+  }
 }
